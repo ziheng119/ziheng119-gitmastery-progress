@@ -35,10 +35,12 @@ jobs:
           pip install requests PyGithub
 
       - name: Debugging
-        run: pwd
+        run: |
+          pwd
+          ls
 
       - name: Poll pull requests and update files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python .github/scripts/process_prs.py
+        run: python process_prs.py
