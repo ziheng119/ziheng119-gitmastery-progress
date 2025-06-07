@@ -34,11 +34,6 @@ jobs:
         run: |
           pip install requests PyGithub
 
-      - name: Debugging
-        run: |
-          pwd
-          ls
-
       - name: Poll pull requests and update files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
